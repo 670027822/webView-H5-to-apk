@@ -141,9 +141,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        // 获取当前时间戳
+long timestamp = System.currentTimeMillis();
+
+// 这里填你需要打包的 H5 页面链接，并附加时间戳参数
+String url = "http://10.12.5.88:8080/?t=" + timestamp;
 
         // 这里填你需要打包的 H5 页面链接
-        webView.loadUrl("https://baidu.com");
+        webView.loadUrl(url);
 
         //显示一些小图片（头像）
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
