@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     // 新增：定时切换 URL 的相关字段
     private final String[] urlList = {
-        "http://10.84.4.173:8080/#/",
-        "http://10.84.4.173:8080/page2/#/"
+        "https://baidu.com",
+        "https://www.wenshushu.cn/"
     };
     private int currentUrlIndex = 0;
     private Handler urlSwitchHandler = new Handler();
