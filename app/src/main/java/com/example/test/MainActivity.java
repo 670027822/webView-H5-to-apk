@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 long timestamp = System.currentTimeMillis();
                 String newUrl = urlList[currentUrlIndex] + "?t=" + timestamp;
                 webView.loadUrl(newUrl);
-                urlSwitchHandler.postDelayed(this, 30000); // 30 秒
+                urlSwitchHandler.postDelayed(this, 60000); // 30 秒
             }
         }, 30000); // 首次延迟
     }
