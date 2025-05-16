@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
-        String url = "http://10.114.136.173:8082/#/";
+        String url = "http://10.114.136.173:8082/#/pages/views/pickTemplate/pickStateTWSB";
         webView.loadUrl(url);
     }
 
