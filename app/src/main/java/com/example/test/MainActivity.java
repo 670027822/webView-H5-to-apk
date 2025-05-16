@@ -27,7 +27,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -155,14 +155,16 @@ public class MainActivity extends AppCompatActivity {
                 webView.clearCache(true);
                 webView.removeAllViews();
                 webView.destroy();
-                FrameLayout parent = findViewById(R.id.main_layout);
+              LinearLayout parent = findViewById(R.id.main_layout);  // 不再是 FrameLayout
+
                 parent.removeView(webView);
                 webView = null;
             }
 
             webView = new WebView(this);
             webView.setId(R.id.web_view);
-            FrameLayout parent = findViewById(R.id.main_layout);
+            LinearLayout parent = findViewById(R.id.main_layout);  // 不再是 FrameLayout
+
             parent.addView(webView);
             setupWebView(webView);
         });
