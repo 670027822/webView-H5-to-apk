@@ -2,16 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.test">
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <WebView
-        android:id="@+id/web_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,19 +16,15 @@
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                         <!-- 标记为主入口 -->
+                <!-- 标记为主入口 -->
                 <action android:name="android.intent.action.MAIN" />
-                
                 <!-- 让应用在普通 Android 设备上可见 -->
                 <category android:name="android.intent.category.LAUNCHER" />
-        
                 <!-- 让应用在 Android TV 上可见 -->
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-        
-                <!-- 让应用变成默认桌面（这样电视开机后可以直接进入你的应用） -->
+                <!-- 让应用变成默认桌面 -->
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <service
@@ -45,7 +32,6 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="location" />
-            
         <receiver
             android:name=".BootReceiver"
             android:enabled="true"
@@ -80,7 +66,8 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
     </application>
-    <uses-permission android:name='android.permission.INTERNET'
+
+    <uses-permission android:name="android.permission.INTERNET"
         tools:ignore="ManifestOrder,WrongManifestParent" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
