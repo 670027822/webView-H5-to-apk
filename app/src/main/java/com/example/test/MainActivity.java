@@ -44,8 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int JOB_ID = 100;
 
     private Handler handler = new Handler(Looper.getMainLooper());
-    // private static final long RECREATE_INTERVAL = 8 * 60 * 60 * 1000L; // 8小时
-    private static final long RECREATE_INTERVAL = 10 * 1000L; // 8小时
+    private static final long RECREATE_INTERVAL = 8 * 60 * 60 * 1000L; // 8小时
     private Runnable recreateWebViewRunnable;
 
     @Override
