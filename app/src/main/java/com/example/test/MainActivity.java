@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
-        String url = "https://www.baidu.com;
+        String url = "https://www.baidu.com";
         webView.loadUrl(url);
     }
 
