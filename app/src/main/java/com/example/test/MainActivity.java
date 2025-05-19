@@ -149,23 +149,8 @@ public class MainActivity extends AppCompatActivity {
     private void recreateWebView() {
         runOnUiThread(() -> {
             if (webView != null) {
-                webView.loadUrl("about:blank");
-                webView.clearHistory();
-                webView.clearCache(true);
-                webView.removeAllViews();
-                webView.destroy();
-              LinearLayout parent = findViewById(R.id.main_layout);  // 不再是 FrameLayout
-
-                parent.removeView(webView);
-                webView = null;
+                webView.reload(); // 重新加载页面即可
             }
-
-            webView = new WebView(this);
-            webView.setId(R.id.web_view);
-            LinearLayout parent = findViewById(R.id.main_layout);  // 不再是 FrameLayout
-
-            parent.addView(webView);
-            setupWebView(webView);
         });
     }
 
@@ -257,12 +242,15 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = contentResolver.query(selectedVideoUri, filePathColumn,
         null,
         null, null);
-        cursor.moveToFirst();
-        int columnIndex = cursor.getColumnIndex(filePathColumn[
-            0
-        ]);
-        filePath = cursor.getString(columnIndex);
-        cursor.close();
-        return filePath;
+        if (cursor != null) {
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[
+                0
+            ]);
+            filePath = cursor.getString(columnIndex);
+            cursor.close();
+            return filePath;
+        }
+        return null;
     }
 }
