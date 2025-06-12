@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.cmegroup"
+        applicationId "com.example.dataWallet"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
